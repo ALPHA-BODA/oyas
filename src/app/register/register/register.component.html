@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <body class="account-pages" >
+
+        <!-- Begin page -->
+        <div class="accountbg" style="background: url('assets/images/oyas3.jpg');background-size: cover;background-position: center;"></div>
+
+        <div class="wrapper-page account-page-full">
+
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="account-box">
+
+                        <div class="card-box p-5">
+                            <h2 class="text-uppercase text-center pb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img src="assets/images/oyas1.jpg" alt="" height="60"></span>
+                                </a>
+                            </h2>
+
+                            <form [formGroup]="formGroup">
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label>Nom</label><span class="text-danger">*</span>
+                                        <input  type="text"  class="form-control" name="lastname" id="lastname" formControlName="lastname" placeholder="Michael ">
+                                        <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
+                                            <span class="text-danger">C'est faux</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label>Prénom</label><span class="text-danger">*</span>
+                                        <input  type="text"  class="form-control" name="firstname" id="firstname" formControlName="firstname" placeholder="Zenaty ">
+                                    </div>
+                                </div>
+                            
+
+                                <div class="form-group row ">
+                                    <div class="col-12">
+                                        <label >Addresse Email</label><span class="text-danger">*</span>
+                                        <input  type="text" class="form-control"  id="email" formControlName="email" placeholder="john@deo.com">
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row ">
+                                    <div class="col">
+                                        <label >Mot de passe</label><span class="text-danger">*</span>
+                                        <input  type="password" class="form-control" type="password" id="password" formControlName="password" placeholder="Enter your password">
+                                    </div>
+                                  <div class="col">
+                                      <label>Re-Mot de passe</label><span class="text-danger">*</span>
+                                      <input  type="password" class="form-control" type="password" formControlName="passwordd" id="passwordd" placeholder="Repeat your password">
+                                  </div>
+                              </div>
+
+                              <div>
+                                <div class="col">
+                                    <label >Telephone</label><span class="text-danger">*</span>
+                                    <input  type="text" class="form-control" type="tel" formControlName="tel" id="tel" placeholder="+216 20 154 145">
+                                </div>
+                            </div>
+                           
+
+                                <div class="form-group row m-b-20">
+                                    <div class="col-12">
+
+                                        <div class="checkbox checkbox-custom">
+                                            <input id="remember" type="checkbox" checked="">
+                                            <label for="remember">
+                                                J'accepte <a href="#" class="text-custom">Les Conditions</a>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row text-center m-t-10">
+                                    <div class="col-12">
+                                        <button class="btn btn-block btn-custom waves-effect waves-light" (click)= "register()">Inscription gratuite</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <div class="row m-t-15">
+                                <div class="col-sm-12 text-center">
+                                    <p class="text-muted">Vous avez déjà un compte? <a href="#" routerLink="/login" class="text-dark m-l-5"><b>S'identifier</b></a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+</html>

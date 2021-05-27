@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup">
+
+    <div class="form-group row">
+        <div class="col">
+            <label>Nom du capteur</label><span class="req">* </span>
+            <input  type="text"  class="form-control" name="name" id="name" formControlName="name" placeholder="Nom du capteur ">
+        </div>
+    </div>
+    <div class="form-group row text-center m-t-10">
+        <div class="col-12">
+            <button  class="fa fa-plus" class="btn btn-sm btn-success text-white" (click)= "addCap()">
+        Ajouter</button>
+        </div>
+    </div>
+</form>
