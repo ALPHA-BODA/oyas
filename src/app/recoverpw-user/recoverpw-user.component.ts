@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RecoverpwUserService } from './recoverpw-user.service';
 
 @Component({
   selector: 'app-recoverpw-user',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecoverpwUserComponent implements OnInit {
 
-  constructor() { }
-
+  formGroup!: FormGroup;
+  constructor(private fb:FormBuilder, private recoverpwUserService: RecoverpwUserService) { }
+  
   ngOnInit(): void {
+  }
+  get email() { return this.formGroup.get('email'); }
+
+  infoForm() {
+    this.formGroup = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
   }
 
 }

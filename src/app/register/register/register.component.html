@@ -26,13 +26,16 @@
                                         <label>Nom</label><span class="text-danger">*</span>
                                         <input  type="text"  class="form-control" name="lastname" id="lastname" formControlName="lastname" placeholder="Michael ">
                                         <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
-                                            <span class="text-danger">C'est faux</span>
+                                            <span class="text-danger">Saisissez votre nom</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <label>Prénom</label><span class="text-danger">*</span>
                                         <input  type="text"  class="form-control" name="firstname" id="firstname" formControlName="firstname" placeholder="Zenaty ">
+                                        <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)">
+                                            <span class="text-danger">Saisissez votre prénom</span>
+                                        </div>
                                     </div>
                                 </div>
                             
@@ -41,6 +44,9 @@
                                     <div class="col-12">
                                         <label >Addresse Email</label><span class="text-danger">*</span>
                                         <input  type="text" class="form-control"  id="email" formControlName="email" placeholder="john@deo.com">
+                                        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                                            <span class="text-danger">Saisissez une adresse Gmail</span>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -48,18 +54,27 @@
                                 <div class="form-group row ">
                                     <div class="col">
                                         <label >Mot de passe</label><span class="text-danger">*</span>
-                                        <input  type="password" class="form-control" type="password" id="password" formControlName="password" placeholder="Enter your password">
+                                        <input  type="password" class="form-control" type="password" id="password" formControlName="password" placeholder="Entrez votre mot de passe">
+                                        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                                            <span class="text-danger">Entrez un mot de passe</span>
+                                        </div>
                                     </div>
                                   <div class="col">
                                       <label>Re-Mot de passe</label><span class="text-danger">*</span>
-                                      <input  type="password" class="form-control" type="password" formControlName="passwordd" id="passwordd" placeholder="Repeat your password">
-                                  </div>
+                                      <input  type="password" class="form-control" type="password" formControlName="passwordd" id="passwordd" placeholder="Confirmez votre mot de passe">
+                                      <div *ngIf="passwordd?.invalid && (passwordd?.dirty || passwordd?.touched)">
+                                        <span class="text-danger">Confirmez votre mot de passe</span>
+                                    </div>
+                                    </div>
                               </div>
 
                               <div>
                                 <div class="col">
-                                    <label >Telephone</label><span class="text-danger">*</span>
+                                    <label >Téléphone</label><span class="text-danger">*</span>
                                     <input  type="text" class="form-control" type="tel" formControlName="tel" id="tel" placeholder="+216 20 154 145">
+                                    <div *ngIf="tel?.invalid && (tel?.dirty || tel?.touched)">
+                                        <span class="text-danger">Entrez votre numéro de téléphone</span>
+                                    </div>
                                 </div>
                             </div>
                            

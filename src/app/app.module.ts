@@ -27,6 +27,7 @@ import { SerachDeleteComponent } from './serach-delete/serach-delete.component';
 import { RegisterService } from './register/register.service';
 import { Menu2Component } from './menu2/menu2.component';
 import { AddCapteurComponent } from './capteur/add-capteur/add-capteur/add-capteur.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AddCapteurComponent } from './capteur/add-capteur/add-capteur/add-capte
     SerachDeleteComponent,
     Menu2Component,
     AddCapteurComponent,
+    UserAccountComponent,
     
   ],
   imports: [

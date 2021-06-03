@@ -28,8 +28,10 @@
                                 <div class="form-group m-b-20 row">
                                     <div class="col-12">
                                         <label for="emailaddress">Adresse Email</label><span class="text-danger">*</span>
-                                        <input class="form-control" type="email" id="emailaddress" formControlName="email" placeholder="Enter your email"
-                                        >
+                                        <input class="form-control" type="email" id="emailaddress" formControlName="email" placeholder="Entrez votre email">
+                                        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                                            <span class="text-danger">Saisissez votre adresse Gmail</span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -37,7 +39,10 @@
                                     <div class="col-12">
                                         <a href="#" routerLink="/recoverpw-user"class="text-muted float-right"><small>Mot de passe oublié?</small></a>
                                         <label for="password">Mot de passe</label><span class="text-danger">*</span>
-                                        <input class="form-control" type="password" formControlName="password" id="password" placeholder="Enter your password">
+                                        <input class="form-control" type="password" formControlName="password" id="password" placeholder="Entrez votre mot de passe">
+                                        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                                            <span class="text-danger">Entrez votre mot de passe</span>
+                                        </div>
                                     </div>
                                 </div>
 

@@ -24,12 +24,19 @@ export class RegisterComponent implements OnInit {
    }
    
   get lastname() { return this.formGroup.get('lastname'); }
+  get firstname() { return this.formGroup.get('firstname'); }
+  get email() { return this.formGroup.get('email'); }
+  get passwordd() { return this.formGroup.get('passwordd'); }
+  get password() { return this.formGroup.get('password'); }
+  get tel() { return this.formGroup.get('tel'); }
+
 
    infoForm() {
     this.formGroup = this.fb.group({
         firstname: ['', [Validators.required]],
         lastname: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
+    //pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. ]*(\\{3})[-. ]*(\\d{4})(?: *x(\\d+))'
         tel: ['', [Validators.required, Validators.minLength(8)]],
         password: ['', [Validators.required, Validators.minLength(8)]],
         passwordd: ['', [Validators.required, Validators.minLength(8)]],

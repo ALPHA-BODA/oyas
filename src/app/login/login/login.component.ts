@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  get email() { return this.formGroup.get('email'); }
+  get password() { return this.formGroup.get('password'); }
+
+
   login(){
       let loginRequest = new LoginRequest(this.formGroup.value.email,this.formGroup.value.password);
       this.loginService.login(loginRequest);
