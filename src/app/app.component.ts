@@ -1,20 +1,44 @@
-import { Component } from '@angular/core';
-import { GetApiService } from './get-api.service';
-
+import { Component, OnInit } from '@angular/core';
+import { GetApiService } from './services/get-api.service';
+import { GetDevicesService } from './services/get-devices.service';
+import { SensorData } from '../app/interfaces/sensor-data';
+import { IMqttMessage } from 'ngx-mqtt';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'frontend';
-  constructor(private api:GetApiService){
+export class AppComponent implements OnInit {
+  water_data: any[] = [];
+  sensorData: SensorData[] = [];
+  subscription = new Subscription();
 
+  constructor(private api: GetApiService, private ap: GetDevicesService) {}
+  ngOnInit() {
+    this.subscribeToTopic();
   }
-  ngOnInit(){
-    this.api.apiCall().subscribe((data)=>{console.warn("get api data", data)});
-    this.api.apiCall2().subscribe((data)=>{console.warn("get api data", data)});
-    this.api.apiCall3().subscribe((data)=>{console.warn("get api data", data)});
+  private subscribeToTopic() {
+    this.subscription = this.api
+      .topicWaterLevel()
+      .subscribe((data: IMqttMessage) => {
+        let item = JSON.parse(data.payload.toString());
+        this.water_data.push(item);
+      });
   }
-
+  retrieveData() {
+    this.api.getSensorData().subscribe((data) => {
+      console.log(data);
+    });
+  }
+  getData(): void {
+    this.api
+      .getSensorData()
+      .subscribe((sensorData) => (this.sensorData = sensorData));
+  }
+  devices() {
+    this.ap.getDevices().subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

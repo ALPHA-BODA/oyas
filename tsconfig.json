@@ -1,4 +1,4 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+// To learn more about this file see: https://angular.io/config/tsconfig. 
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -26,7 +26,7 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    //"strictPropertyInitialization": false
+    "strictPropertyInitialization": false
 
    
   }

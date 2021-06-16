@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login/login.component';
-import {RegisterComponent} from './register/register/register.component';
+import { RegisterComponent } from './register/register/register.component';
 import { MenuComponent } from './menu/menu.component';
-import {SerachDeleteComponent} from './serach-delete/serach-delete.component';
 import { RecoverpwUserComponent } from './recoverpw-user/recoverpw-user.component';
 import { LogoutUserComponent } from './logout-user/logout-user.component';
 
@@ -11,47 +10,42 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
-
 
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
 
   {
     path: 'register',
-    component : RegisterComponent
-
+    component: RegisterComponent,
   },
-  
+
   {
     path: 'recoverpw-user',
-    component : RecoverpwUserComponent
-
+    component: RecoverpwUserComponent,
   },
 
   {
     path: 'logout-user',
-    component : LogoutUserComponent
-
+    component: LogoutUserComponent,
   },
 
-  {
-    path: 'serach',
-    component : SerachDeleteComponent
-
-  },
+  /*{
+    path: 'user',
+    component: UserComponent,
+  },*/
 
   {
     path: 'menu',
-    component: MenuComponent
-  }
+    component: MenuComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

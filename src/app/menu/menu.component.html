@@ -188,6 +188,7 @@
                             <li>
                                 <div class="page-title-box">
                                     <h4 class="page-title">Tableau de bord </h4>
+                                    
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item active" *ngIf="isAdmin">Bienvenue au panneau d'administration !</li>
 
@@ -203,7 +204,13 @@
                 <!-- Top Bar End -->
 
 <br> <br>
-               
+<ul class="sensorData">
+    <li *ngFor="let data of sensorData">
+      <p>{{ data.device_id }}</p>
+      <p>{{ data.raw }}</p>
+      <p>{{data.time }}</p>
+    </li>
+  </ul>
 
 
                 
